@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+<title>Student Registration Form</title>
+<script type="text/javascript">
+function validate()
+{ 
+if(document.signup.fname.value=="") 
+{ 
+alert("Please Enter First Name!");
+return false;
+} 
+if(document.signup.lname.value=="") 
+{ 
+alert("Please Enter Last Name!");
+return false;
+} 
+if(document.signup.uname.value=="") 
+{ 
+alert("Please Enter User Name!");
+return false;
+} 
+if(document.signup.pword1.value=="") 
+{ 
+alert("Please Enter Password!");
+return false;
+} 
+if(document.signup.pword1.value<6) 
+{ 
+alert("Please Enter min 6 characters!");
+return false;
+} 
+if(document.signup.pword2.value=="") 
+{ 
+alert("Please Enter Password Again!");
+return false;
+} 
+if(document.signup.pword2.value!=document.signup.pword1.value) 
+{ 
+alert("Password Mismatch Re-enter Password!");
+return false;
+} 
+alert("Details Entered Successfully");
+
+} 
+
+</script>
+</head>
+<body > 
+ 
+<table width="100%" height="100%">
+<td colspan="2" width="15%"></td>
+<td colspan="1" color="#ffffff" width="70%" height="100%">
+
+<h2 >New User Signup Form</h2>
+<form name="signup" action=""  method="post" onsubmit="return validate()">
+{% csrf_token %}
+<p>
+&nbsp;&nbsp;*First Name:<input type="text" name="fname" size="20">
+&nbsp;&nbsp;*Last Name:<input type="text" name="lname" size="20">
+</p>
+<p >&nbsp;&nbsp;*User Name:<input type="text" name="uname" size="20"></p>
+<p >&nbsp;&nbsp;*Password:<input type="password" name="pword1" size="20"></p>
+<p >&nbsp;&nbsp;*Confirm Password:<input type="password" name="pword2" size="20"></p>
+<p >&nbsp;&nbsp;*upload image:<input type="file" name="file" ></p>
+<!-- <p>&nbsp;&nbsp;Country:<select name="country">
+<option selected>Select Country</option>
+<option name="country" value="India">India</option>
+<option name="country" value="Russia">Russia</option>
+<option name="country" value="France">France</option>
+<option name="country" value="Italy">Italy</option>
+</select>
+</p> -->
+<p>&nbsp;&nbsp;Address(line1, city, state, pincode):<input name="address" type="text" size="100">    <br>
+
+</p>
+<p >&nbsp;&nbsp; Email:<input type="email" name="email" size="20"></p>
+<!-- <p ><input type="checkbox" name="agree">I Agree The Terms & Conditions</p> -->
+<p ><input type="submit" value="submit"> <input type="reset" value="reset"></p>
+
+</form>
+</td>
+<td colspan="2" width="15%"> </td>
+</table>
+</body> 
+</html>

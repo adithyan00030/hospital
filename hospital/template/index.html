@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hospital</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}"> 
+</head>
+<body>
+    <main>
+        <div class="row">
+            <div class="colm-logo">
+             
+                <h2>HOSPITAL</h2>
+                <input type="radio">doctor <br>
+                <input type="radio">patient <br>
+            </div>
+            <div class="colm-form">
+                <div class="form-container">
+                    <form action="login" method="post">
+                        {%csrf_token%}
+                    <input type="text" name="uname" placeholder="user name">
+                   
+                    <input type="password" name="pword1" placeholder="Password">
+                    <!-- <button class="btn-login">LOGIN</button> -->
+                    <input type="submit" name="login" value='login' class="btn-login">
+                    </form>
+                 
+
+                    <a href="register" class="btn-new">signup</a>
+                </div>
+          
+            </div>
+        </div>
+    </main>
+<div>
+    {%for messages in messages%}
+    <h3>{{messages}}</h3>
+    {%endfor%}
+</div>
+</body>
+</html>
