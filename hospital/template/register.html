@@ -60,6 +60,8 @@ alert("Details Entered Successfully");
 <h2 >New User Signup Form</h2>
 <form name="signup" action=""  method="post" onsubmit="return validate()">
 {% csrf_token %}
+<input type="radio">doctor <br>
+<input type="radio">patient <br>
 <p>
 &nbsp;&nbsp;*First Name:<input type="text" name="fname" size="20">
 &nbsp;&nbsp;*Last Name:<input type="text" name="lname" size="20">
